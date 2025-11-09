@@ -1,0 +1,222 @@
+/* --- Zmienne kolorów --- */
+:root {
+    --primary-color: #26a69a; /* Teal */
+    --primary-color-dark: #00766c;
+    --body-bg: #f4f4f4;
+    --card-bg: #ffffff;
+    --text-color: #424242;
+    --text-color-light: #9e9e9e;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --input-border: #9e9e9e;
+}
+
+body.dark-mode {
+    --primary-color: #26a69a; /* Teal */
+    --primary-color-dark: #00766c;
+    --body-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-color-light: #bdbdbd;
+    --border-color: #424242;
+    --input-bg: #1e1e1e;
+    --input-border: #757575;
+}
+
+/* --- Style ogólne --- */
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- Komponenty Materialize --- */
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.card .card-title {
+    color: var(--text-color);
+}
+
+.collection {
+    border-color: var(--border-color);
+}
+
+.collection .collection-item {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.collection .collection-header {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+/* Styl dla zakończonych zadań */
+.completed .task-title,
+.completed .task-description {
+    text-decoration: line-through;
+    color: #9e9e9e; /* Grey */
+}
+
+.collection-item.completed {
+    opacity: 0.7;
+}
+
+/* Styl dla przeterminowanych zadań */
+.overdue .task-deadline {
+    color: #f44336; /* Red */
+    font-weight: bold;
+}
+
+/* Dodatkowe marginesy i ostylowanie */
+.task-details {
+    margin-top: 5px;
+}
+
+.task-details .chip {
+    margin-right: 5px;
+}
+
+/* Kolory dla chipów priorytetów */
+.chip.priority-low { background-color: #4caf50; color: white; }
+.chip.priority-medium { background-color: #ff9800; color: white; }
+.chip.priority-high { background-color: #f44336; color: white; }
+
+/* Ikony w select dla priorytetów */
+.dropdown-content li > a > i,
+.dropdown-content li > span > i {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.dropdown-content .priority-icon-low { color: #4caf50; }
+.dropdown-content .priority-icon-medium { color: #ff9800; }
+.dropdown-content .priority-icon-high { color: #f44336; }
+
+body.dark-mode .dropdown-content li > a, 
+body.dark-mode .dropdown-content li > span {
+    color: var(--text-color);
+}
+
+
+/* --- Style dla trybu ciemnego --- */
+body.dark-mode .nav-wrapper {
+    background-color: var(--primary-color-dark) !important;
+}
+
+body.dark-mode .btn, body.dark-mode .btn:hover, body.dark-mode .btn:focus {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .btn-flat {
+    color: var(--primary-color);
+}
+
+body.dark-mode .filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+body.dark-mode .collection-item.completed {
+    background-color: #2c2c2c;
+}
+
+/* Style dla formularzy w trybie ciemnym */
+body.dark-mode input[type=text]:not(.browser-default),
+body.dark-mode input[type=email]:not(.browser-default),
+body.dark-mode input[type=password]:not(.browser-default),
+body.dark-mode textarea.materialize-textarea {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--input-border);
+}
+
+body.dark-mode input[type=text]:not(.browser-default):focus:not([readonly]),
+body.dark-mode textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid var(--primary-color);
+    box-shadow: 0 1px 0 0 var(--primary-color);
+}
+
+body.dark-mode label {
+    color: var(--text-color-light);
+}
+
+body.dark-mode input:focus + label,
+body.dark-mode textarea:focus + label {
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .select-wrapper .caret {
+    fill: var(--text-color);
+}
+
+body.dark-mode .dropdown-content {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .datepicker-modal {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .datepicker-date-display,
+body.dark-mode .datepicker-weekday-display {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .datepicker-table td.is-selected {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .datepicker-cancel, body.dark-mode .datepicker-done {
+    color: var(--primary-color);
+}
+
+body.dark-mode textarea#quick-note-area::placeholder {
+    color: var(--text-color-light);
+}
+
+/* Styl dla aktywnego/wybranego zadania */
+.collection .collection-item.active {
+    background-color: var(--primary-color) !important;
+    color: white;
+}
+.collection .collection-item.active .grey-text {
+    color: #e0e0e0 !important;
+}
+
+/* --- Style dla FullCalendar --- */
+#calendar {
+    margin-top: 1rem;
+}
+
+.fc-event {
+    cursor: pointer;
+}
+
+body.dark-mode .fc .fc-toolbar-title {
+    color: var(--text-color);
+}
+
+body.dark-mode .fc .fc-daygrid-day-number {
+    color: var(--text-color-light);
+}
+
+body.dark-mode .fc .fc-col-header-cell-cushion {
+    color: var(--text-color);
+}
+
+body.dark-mode .fc-theme-standard .fc-popover {
+    background-color: var(--card-bg);
+}
+
+/* Wyrównanie przycisków edycji/usuwania */
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
